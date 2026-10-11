@@ -31,7 +31,6 @@ export interface NavItem {
   id: string;
   label: string;
   href: string;
-  number: string;
 }
 
 export interface SkillItem {
@@ -107,13 +106,14 @@ export const PROFILE: ProfileData = {
   shortName: "Thasika",
   initials: "TR",
   roles: [
-    "Full-Stack Developer",
+    
     "Web Developer",
     "Frontend Developer",
     "UI/UX Designer",
+    "Full-Stack Developer",
     "Project Manager",
   ],
-  primaryTitle: "Full-Stack Developer & IT Undergraduate",
+  primaryTitle: "Frontend Developer & UI/UX Designer",
   eyebrow: "FULL-STACK DEVELOPER · IT UNDERGRADUATE",
   heroHeading: "Building digital experiences with code, creativity, and curiosity.",
   heroIntro:
@@ -142,13 +142,13 @@ export const PROFILE: ProfileData = {
 };
 
 export const NAV: NavItem[] = [
-  { id: "about", label: "About", href: "#about", number: "01" },
-  { id: "skills", label: "Skills", href: "#skills", number: "02" },
-  { id: "projects", label: "Projects", href: "#projects", number: "03" },
-  { id: "certifications", label: "Certifications", href: "#certifications", number: "04" },
-  { id: "experience", label: "Experience", href: "#experience", number: "05" },
-  { id: "achievements", label: "Achievements", href: "#achievements", number: "06" },
-  { id: "contact", label: "Contact", href: "#contact", number: "07" },
+  { id: "about", label: "About", href: "#about" },
+  { id: "skills", label: "Skills", href: "#skills" },
+  { id: "projects", label: "Projects", href: "#projects"},
+  { id: "certifications", label: "Certifications", href: "#certifications" },
+  { id: "experience", label: "Experience", href: "#experience" },
+  { id: "achievements", label: "Achievements", href: "#achievements" },
+  { id: "contact", label: "Contact", href: "#contact" },
 ];
 
 export const SKILL_GROUPS: SkillGroup[] = [
@@ -659,26 +659,6 @@ export const ACHIEVEMENTS: AchievementItem[] = [
   },
   {
     number: "02",
-    title: "YESSIST12 2024 — Innovation Challenge Achievement",
-    roleOrContext: "Member of Quantum Quest · Winner",
-    issuer: "University of Vavuniya",
-    year: "2024",
-    description:
-      "Won the Preliminary Round of the Innovation Challenge Track as a member of Quantum Quest, designing and pitching an inventive technological solution.",
-    stats: "Preliminary Round Winner",
-  },
-  {
-    number: "03",
-    title: "ZeroPlastic Volunteer Awards 2024",
-    roleOrContext: "Hero Volunteer",
-    issuer: "ZeroPlastic Movement",
-    year: "2024",
-    description:
-      "Recognised for contributions to climate action, plastic pollution reduction, and sustainable practices through impactful campus and community action.",
-    stats: "Hero Volunteer Recognition",
-  },
-  {
-    number: "04",
     title: "IEEE Sight Sprints 2025",
     roleOrContext: "Organising Committee Member",
     issuer: "IEEE",
@@ -688,7 +668,7 @@ export const ACHIEVEMENTS: AchievementItem[] = [
     stats: "Organizing Committee",
   },
   {
-    number: "05",
+    number: "03",
     title: "Certificate of Appreciation — IEEE Career Compass Workshop",
     roleOrContext: "Workshop Coordinator",
     issuer: "IEEE Student Branch, University of Vavuniya",
@@ -697,4 +677,26 @@ export const ACHIEVEMENTS: AchievementItem[] = [
       "Recognised for contributions to event coordination, teamwork, and pre-event and post-event support for career mentorship sessions.",
     stats: "Appreciation Award",
   },
+  {
+    number: "04",
+    title: "YESSIST12 2024 — Innovation Challenge Achievement",
+    roleOrContext: "Member of Quantum Quest · Winner",
+    issuer: "University of Vavuniya",
+    year: "2024",
+    description:
+      "Won the Preliminary Round of the Innovation Challenge Track as a member of Quantum Quest, designing and pitching an inventive technological solution.",
+    stats: "Preliminary Round Winner",
+  },
+  {
+    number: "05",
+    title: "ZeroPlastic Volunteer Awards 2024",
+    roleOrContext: "Hero Volunteer",
+    issuer: "ZeroPlastic Movement",
+    year: "2024",
+    description:
+      "Recognised for contributions to climate action, plastic pollution reduction, and sustainable practices through impactful campus and community action.",
+    stats: "Hero Volunteer Recognition",
+  },
+  
+  
 ];

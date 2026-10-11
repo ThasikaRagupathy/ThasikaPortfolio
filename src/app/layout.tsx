@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+// @ts-expect-error Next.js processes global CSS imports.
 import "./globals.css";
 import { SmoothScrollProvider } from "@/lib/scroll";
 
@@ -81,7 +82,7 @@ export default function RootLayout({
       lang="en"
       className={`${interTight.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
-      <body className="bg-[#F4F2EE] text-[#0D0D0D] antialiased selection:bg-[#0D0D0D] selection:text-[#F4F2EE] min-h-screen">
+      <body className="bg-warm-bg text-primary antialiased selection:bg-primary selection:text-warm-bg min-h-screen">
         <SmoothScrollProvider>
           {children}
         </SmoothScrollProvider>

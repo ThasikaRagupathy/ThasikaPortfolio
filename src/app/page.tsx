@@ -10,11 +10,11 @@ import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-[#F4F2EE] text-[#0D0D0D]">
+    <div className="relative min-h-screen bg-warm-bg text-primary">
       {/* Skip to Main Content Link for Accessibility */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#0D0D0D] text-white rounded-md text-xs font-mono"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-primary text-white rounded-md text-xs font-mono"
       >
         Skip to main content
       </a>

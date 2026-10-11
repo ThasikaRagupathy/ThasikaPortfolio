@@ -28,7 +28,6 @@ export function About() {
     >
       <Reveal>
         <SectionHeading
-          number="01"
           eyebrow="Profile & Background"
           title="A little about"
           italicWord="me."
@@ -42,14 +41,14 @@ export function About() {
         <div className="lg:col-span-5 flex flex-col gap-6">
           <Reveal delayMs={100}>
             <div className="bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-black/8 shadow-2xs">
-              <h3 className="text-xs font-mono uppercase tracking-wider text-[#77756F] mb-4">
+              <h3 className="text-xs font-mono uppercase tracking-wider text-muted mb-4">
                 Professional Profile
               </h3>
-              <p className="text-sm sm:text-base text-[#0D0D0D] leading-relaxed font-normal">
+              <p className="text-sm sm:text-base text-primary leading-relaxed font-normal">
                 {PROFILE.aboutSummary}
               </p>
               <div className="my-5 h-px bg-black/8" />
-              <p className="text-xs sm:text-sm text-[#3A3A3A] leading-relaxed italic">
+              <p className="text-xs sm:text-sm text-secondary leading-relaxed italic">
                 {PROFILE.aboutSupporting}
               </p>
 
@@ -93,33 +92,33 @@ export function About() {
         {/* Centre Column: Developer Identity Card (4 cols) */}
         <div className="lg:col-span-4 flex flex-col items-center">
           <Reveal delayMs={200} className="w-full">
-            <div className="perspective-1000 w-full max-w-[340px] mx-auto">
+            <div className="perspective-1000 w-full max-w-85 mx-auto">
               {/* Card Container with Flip Transition */}
               <div
-                className={`relative w-full aspect-[9/14] rounded-2xl transition-transform duration-700 transform-style-preserve-3d shadow-xl border border-black/15 ${
+                className={`relative w-full aspect-9/14 rounded-2xl transition-transform duration-700 transform-style-preserve-3d shadow-xl border border-black/15 ${
                   isFlipped ? "rotate-y-180" : ""
                 }`}
               >
                 {/* Front Side */}
-                <div className="absolute inset-0 backface-hidden bg-[#FFFFFF] rounded-2xl p-5 flex flex-col justify-between overflow-hidden">
+                <div className="absolute inset-0 backface-hidden bg-surface rounded-2xl p-5 flex flex-col justify-between overflow-hidden">
                   {/* Subtle Card Header */}
                   <div>
                     <div className="flex items-center justify-between border-b border-black/8 pb-3">
                       <div>
-                        <span className="font-mono text-[9px] uppercase tracking-widest text-[#77756F] block">
+                        <span className="font-mono text-[9px] uppercase tracking-widest text-muted block">
                           Developer Credential
                         </span>
-                        <span className="text-xs font-semibold text-[#0D0D0D]">
+                        <span className="text-xs font-semibold text-primary">
                           University of Vavuniya
                         </span>
                       </div>
-                      <div className="w-6 h-6 rounded-md bg-[#E9E6E0] border border-black/10 flex items-center justify-center">
-                        <Cpu className="w-3.5 h-3.5 text-[#0D0D0D]" />
+                      <div className="w-6 h-6 rounded-md bg-soft border border-black/10 flex items-center justify-center">
+                        <Cpu className="w-3.5 h-3.5 text-primary" />
                       </div>
                     </div>
 
                     {/* Extracted Portrait Frame from Intro Video */}
-                    <div className="relative mt-3 w-full aspect-[4/3] rounded-xl overflow-hidden bg-[#E9E6E0] border border-black/10">
+                    <div className="relative mt-3 w-full aspect-4/3 rounded-xl overflow-hidden bg-soft border border-black/10">
                       <video
                         src={PROFILE.introVideoUrl}
                         playsInline
@@ -137,17 +136,17 @@ export function About() {
 
                   {/* Card Details */}
                   <div className="my-2 space-y-1 text-left">
-                    <h4 className="text-lg font-bold text-[#0D0D0D] tracking-tight">
+                    <h4 className="text-lg font-bold text-primary tracking-tight">
                       {PROFILE.name}
                     </h4>
-                    <p className="text-xs font-mono font-medium text-[#77756F]">
-                      Full-Stack Developer
+                    <p className="text-xs font-mono font-medium text-muted">
+                      Frontend Developer & UI/UX Designer
                     </p>
-                    <div className="pt-2 text-xs text-[#3A3A3A] space-y-0.5">
-                      <p className="font-medium text-[#0D0D0D] text-[11px]">
+                    <div className="pt-2 text-xs text-secondary space-y-0.5">
+                      <p className="font-medium text-primary text-[11px]">
                         {PROFILE.degree}
                       </p>
-                      <p className="text-[11px] text-[#77756F]">
+                      <p className="text-[11px] text-muted">
                         {PROFILE.university} ({PROFILE.educationYears})
                       </p>
                     </div>
@@ -166,12 +165,12 @@ export function About() {
                             <div
                               key={idx}
                               style={{ height: `${height * 5}px` }}
-                              className="w-[2px] bg-[#0D0D0D]"
+                              className="w-0.5 bg-primary"
                             />
                           )
                         )}
                       </div>
-                      <span className="font-mono text-[8px] text-[#77756F] tracking-widest uppercase">
+                      <span className="font-mono text-[8px] text-muted tracking-widest uppercase">
                         TR-DEV-PASSPORT
                       </span>
                     </div>
@@ -179,7 +178,7 @@ export function About() {
                     <button
                       type="button"
                       onClick={() => setIsFlipped(!isFlipped)}
-                      className="px-2.5 py-1 rounded-full bg-[#E9E6E0] hover:bg-[#dedad3] text-[#0D0D0D] text-[10px] font-mono flex items-center gap-1 transition-colors"
+                      className="px-2.5 py-1 rounded-full bg-soft hover:bg-[#dedad3] text-primary text-[10px] font-mono flex items-center gap-1 transition-colors"
                       aria-label="Flip developer identity card"
                     >
                       <RotateCcw className="w-3 h-3" />
@@ -189,10 +188,10 @@ export function About() {
                 </div>
 
                 {/* Back Side */}
-                <div className="absolute inset-0 backface-hidden rotate-y-180 bg-[#0D0D0D] text-[#F4F2EE] rounded-2xl p-5 flex flex-col justify-between overflow-hidden">
+                <div className="absolute inset-0 backface-hidden rotate-y-180 bg-primary text-warm-bg rounded-2xl p-5 flex flex-col justify-between overflow-hidden">
                   <div>
                     <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                      <span className="font-mono text-[9px] text-[#77756F] uppercase tracking-widest">
+                      <span className="font-mono text-[9px] text-muted uppercase tracking-widest">
                         Technical Specializations
                       </span>
                       <Sparkles className="w-3.5 h-3.5 text-white/60" />
@@ -252,23 +251,23 @@ export function About() {
         <div className="lg:col-span-3 flex flex-col gap-4">
           <Reveal delayMs={300}>
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-black/8 shadow-2xs space-y-5">
-              <h3 className="text-xs font-mono uppercase tracking-wider text-[#77756F]">
+              <h3 className="text-xs font-mono uppercase tracking-wider text-muted">
                 Quick Facts
               </h3>
 
               {/* Education */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#E9E6E0] border border-black/8 flex items-center justify-center shrink-0">
-                  <GraduationCap className="w-4 h-4 text-[#0D0D0D]" />
+                <div className="w-8 h-8 rounded-lg bg-soft border border-black/8 flex items-center justify-center shrink-0">
+                  <GraduationCap className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono text-[#77756F] uppercase block">
+                  <span className="text-[11px] font-mono text-muted uppercase block">
                     Education
                   </span>
-                  <span className="text-xs font-semibold text-[#0D0D0D] block">
+                  <span className="text-xs font-semibold text-primary block">
                     {PROFILE.university}
                   </span>
-                  <span className="text-[11px] text-[#3A3A3A] block">
+                  <span className="text-[11px] text-secondary block">
                     {PROFILE.degree}
                   </span>
                 </div>
@@ -276,14 +275,14 @@ export function About() {
 
               {/* Technical Focus */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#E9E6E0] border border-black/8 flex items-center justify-center shrink-0">
-                  <Cpu className="w-4 h-4 text-[#0D0D0D]" />
+                <div className="w-8 h-8 rounded-lg bg-soft border border-black/8 flex items-center justify-center shrink-0">
+                  <Cpu className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono text-[#77756F] uppercase block">
+                  <span className="text-[11px] font-mono text-muted uppercase block">
                     Technical Focus
                   </span>
-                  <span className="text-xs text-[#0D0D0D] leading-snug block">
+                  <span className="text-xs text-primary leading-snug block">
                     {PROFILE.technicalFocus}
                   </span>
                 </div>
@@ -291,14 +290,14 @@ export function About() {
 
               {/* Location */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#E9E6E0] border border-black/8 flex items-center justify-center shrink-0">
-                  <MapPin className="w-4 h-4 text-[#0D0D0D]" />
+                <div className="w-8 h-8 rounded-lg bg-soft border border-black/8 flex items-center justify-center shrink-0">
+                  <MapPin className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono text-[#77756F] uppercase block">
+                  <span className="text-[11px] font-mono text-muted uppercase block">
                     Location
                   </span>
-                  <span className="text-xs font-medium text-[#0D0D0D] block">
+                  <span className="text-xs font-medium text-primary block">
                     {PROFILE.location}
                   </span>
                 </div>
@@ -306,16 +305,16 @@ export function About() {
 
               {/* Email */}
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#E9E6E0] border border-black/8 flex items-center justify-center shrink-0">
-                  <Mail className="w-4 h-4 text-[#0D0D0D]" />
+                <div className="w-8 h-8 rounded-lg bg-soft border border-black/8 flex items-center justify-center shrink-0">
+                  <Mail className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono text-[#77756F] uppercase block">
+                  <span className="text-[11px] font-mono text-muted uppercase block">
                     Email
                   </span>
                   <a
                     href={`mailto:${PROFILE.email}`}
-                    className="text-xs font-medium text-[#0D0D0D] hover:underline block break-all"
+                    className="text-xs font-medium text-primary hover:underline block break-all"
                   >
                     {PROFILE.email}
                   </a>
@@ -328,20 +327,20 @@ export function About() {
                   href={PROFILE.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#3A3A3A] hover:text-[#0D0D0D] flex items-center gap-1 hover:underline"
+                  className="text-secondary hover:text-primary flex items-center gap-1 hover:underline"
                 >
                   <span>GitHub</span>
-                  <ExternalLink className="w-3 h-3 text-[#77756F]" />
+                  <ExternalLink className="w-3 h-3 text-muted" />
                 </a>
                 <span className="text-black/20">·</span>
                 <a
                   href={PROFILE.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#3A3A3A] hover:text-[#0D0D0D] flex items-center gap-1 hover:underline"
+                  className="text-secondary hover:text-primary flex items-center gap-1 hover:underline"
                 >
                   <span>LinkedIn</span>
-                  <ExternalLink className="w-3 h-3 text-[#77756F]" />
+                  <ExternalLink className="w-3 h-3 text-muted" />
                 </a>
               </div>
             </div>

@@ -99,7 +99,7 @@ export function Hero() {
       ref={heroSectionRef}
       id="hero"
       aria-label="Introduction and Video Centrepiece"
-      className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-center items-center pt-24 pb-16 px-4 sm:px-6 overflow-hidden bg-[#F4F2EE]"
+      className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-center items-center pt-24 pb-16 px-4 sm:px-6 overflow-hidden bg-warm-bg"
     >
       {/* Background Large Outlined THASIKA Typography */}
       <div
@@ -113,15 +113,15 @@ export function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center text-center">
         {/* Eyebrow Label */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-black/10 text-[11px] sm:text-xs font-mono tracking-widest uppercase text-[#3A3A3A] mb-6 shadow-2xs">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#0D0D0D] animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-black/10 text-[11px] sm:text-xs font-mono tracking-widest uppercase text-secondary mb-6 shadow-2xs">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           <span>{PROFILE.eyebrow}</span>
         </div>
 
         {/* Video Centrepiece Container */}
-        <div className="relative my-2 sm:my-4 w-full max-w-[340px] sm:max-w-[400px] md:max-w-[440px] group">
+        <div className="relative my-2 sm:my-4 w-full max-w-85 sm:max-w-100 md:max-w-110 group">
           {/* Subtle Outer Card Border & Backdrop */}
-          <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full rounded-2xl overflow-hidden bg-[#E9E6E0] border border-black/15 shadow-xl transition-all duration-300">
+          <div className="relative aspect-4/5 sm:aspect-3/4 w-full rounded-2xl overflow-hidden bg-soft border border-black/15 shadow-xl transition-all duration-300">
             {isVideoAvailable ? (
               <video
                 ref={videoRef}
@@ -139,17 +139,17 @@ export function Hero() {
               </video>
             ) : (
               /* Fallback if video asset is missing or unsupported */
-              <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-[#E9E6E0]">
+              <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-soft">
                 <div className="w-16 h-16 rounded-full border border-black/20 flex items-center justify-center mb-4">
                   <span className="font-mono text-xl font-bold">{PROFILE.initials}</span>
                 </div>
-                <p className="text-sm font-medium text-[#0D0D0D]">{PROFILE.name}</p>
-                <p className="text-xs text-[#77756F] mt-1">{PROFILE.primaryTitle}</p>
+                <p className="text-sm font-medium text-primary">{PROFILE.name}</p>
+                <p className="text-xs text-muted mt-1">{PROFILE.primaryTitle}</p>
               </div>
             )}
 
             {/* Video Controls Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200 flex flex-col justify-between p-4 pointer-events-none">
+            <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-black/20 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200 flex flex-col justify-between p-4 pointer-events-none">
               {/* Top Bar with Live Tag */}
               <div className="flex items-center justify-between pointer-events-auto">
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-mono text-white tracking-wider uppercase">
@@ -164,7 +164,7 @@ export function Hero() {
                 <button
                   type="button"
                   onClick={togglePlay}
-                  className="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-[#0D0D0D] flex items-center justify-center shadow-md transition-transform active:scale-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+                  className="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-primary flex items-center justify-center shadow-md transition-transform active:scale-90 focus-visible:outline-2 focus-visible:outline-white"
                   aria-label={isPlaying ? "Pause introduction video" : "Play introduction video"}
                 >
                   {isPlaying ? <Pause className="w-4 h-4 fill-current" /> : <Play className="w-4 h-4 fill-current ml-0.5" />}
@@ -174,7 +174,7 @@ export function Hero() {
                 <button
                   type="button"
                   onClick={toggleSound}
-                  className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-black/75 hover:bg-black text-white text-xs font-mono transition-transform active:scale-95 shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+                  className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-black/75 hover:bg-black text-white text-xs font-mono transition-transform active:scale-95 shadow-md focus-visible:outline focus-visible:outline-white"
                   aria-label={isMuted ? "Unmute video sound" : "Mute video sound"}
                 >
                   {isMuted ? (
@@ -207,16 +207,16 @@ export function Hero() {
         </div>
 
         {/* Main Heading */}
-        <h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-[#0D0D0D] max-w-3xl leading-[1.12]">
-          Building digital experiences with{" "}
-          <span className="font-serif italic font-normal text-[#0D0D0D]/90">
-            code, creativity,
-          </span>{" "}
-          and curiosity.
-        </h1>
+<h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-primary max-w-3xl leading-[1.12] font-(family-name:--font-poppins)">
+  Building digital experiences with{" "}
+  <span className="font-medium text-primary/90">
+    code, creativity,
+  </span>{" "}
+  and curiosity.
+</h1>
 
         {/* Introduction Copy */}
-        <p className="mt-5 text-sm sm:text-base md:text-lg text-[#3A3A3A] max-w-2xl font-normal leading-relaxed">
+        <p className="mt-5 text-sm sm:text-base md:text-lg text-secondary max-w-2xl font-normal leading-relaxed">
           {PROFILE.heroIntro}
         </p>
 
@@ -246,7 +246,7 @@ export function Hero() {
             size="lg"
             icon={<FileText className="w-4 h-4" />}
           >
-            Download Résumé
+            Download Resume
           </Button>
         </div>
       </div>

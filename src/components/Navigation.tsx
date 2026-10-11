@@ -54,7 +54,7 @@ export function Navigation() {
         aria-hidden="true"
       >
         <div
-          className="h-full bg-[#0D0D0D] transition-[width] duration-75 ease-out"
+          className="h-full bg-primary transition-[width] duration-75 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -70,29 +70,29 @@ export function Navigation() {
             aria-label="Main Navigation"
             className={`flex items-center justify-between px-4 py-2.5 sm:px-5 sm:py-3 rounded-full transition-all duration-300 ${
               isScrolled
-                ? "bg-[#F4F2EE]/85 backdrop-blur-md shadow-sm border border-black/10"
+                ? "bg-warm-bg/85 backdrop-blur-md shadow-sm border border-black/10"
                 : "bg-transparent border border-transparent"
             }`}
           >
             {/* Brand Logo & Name */}
             <a
               href="#"
-              className="flex items-center gap-3 group focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#0D0D0D] rounded-full"
+              className="flex items-center gap-3 group focus-visible:outline focus-visible:outline-primary rounded-full"
               aria-label={`${PROFILE.name} - Back to top`}
             >
               {/* Outlined Circular Monogram */}
               <div className="w-8 h-8 rounded-full border border-black/30 group-hover:border-black flex items-center justify-center transition-colors bg-white/60">
-                <span className="font-mono text-xs font-semibold tracking-wider text-[#0D0D0D]">
+                <span className="font-mono text-xs font-semibold tracking-wider text-primary">
                   {PROFILE.initials}
                 </span>
               </div>
-              <span className="text-sm font-semibold tracking-tight text-[#0D0D0D] hidden min-[420px]:inline-block">
+              <span className="text-sm font-semibold tracking-tight text-primary hidden min-[420px]:inline-block">
                 {PROFILE.name}
               </span>
             </a>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden md:flex items-center gap-1 bg-[#E9E6E0]/70 backdrop-blur-sm px-2 py-1.5 rounded-full border border-black/5">
+            <div className="hidden md:flex items-center gap-1 bg-soft/70 backdrop-blur-sm px-2 py-1.5 rounded-full border border-black/5">
               {NAV.map((item) => {
                 const isActive = activeSection === item.id;
                 return (
@@ -101,8 +101,8 @@ export function Navigation() {
                     href={item.href}
                     className={`relative px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
                       isActive
-                        ? "text-[#0D0D0D] font-semibold bg-white shadow-xs"
-                        : "text-[#77756F] hover:text-[#0D0D0D] hover:bg-black/5"
+                        ? "text-primary font-semibold bg-white shadow-xs"
+                        : "text-muted hover:text-primary hover:bg-black/5"
                     }`}
                   >
                     <span>{item.label}</span>
@@ -116,17 +116,17 @@ export function Navigation() {
               <a
                 href={PROFILE.resumePdfUrl}
                 download="Thasika_Ragupathy_CV.pdf"
-                className="hidden lg:inline-flex items-center gap-1.5 text-xs font-medium px-3.5 py-1.5 rounded-full border border-black/20 hover:border-black bg-white/80 hover:bg-white text-[#0D0D0D] transition-colors"
+                className="hidden lg:inline-flex items-center gap-1.5 text-xs font-medium px-3.5 py-1.5 rounded-full border border-black/20 hover:border-black bg-white/80 hover:bg-white text-primary transition-colors"
               >
                 <span>CV</span>
-                <ArrowUpRight className="w-3 h-3 text-[#77756F]" />
+                <ArrowUpRight className="w-3 h-3 text-muted" />
               </a>
 
               {/* Mobile Menu Toggle Button */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden w-9 h-9 rounded-full border border-black/15 bg-white/80 flex items-center justify-center text-[#0D0D0D] hover:bg-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#0D0D0D]"
+                className="md:hidden w-9 h-9 rounded-full border border-black/15 bg-white/80 flex items-center justify-center text-primary hover:bg-white transition-colors focus-visible:outline-primary"
                 aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-navigation"
@@ -145,7 +145,7 @@ export function Navigation() {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation"
-          className="fixed inset-0 z-50 bg-[#F4F2EE] flex flex-col justify-between p-6 md:hidden animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 bg-warm-bg flex flex-col justify-between p-6 md:hidden animate-in fade-in duration-200"
         >
           {/* Top Bar inside overlay */}
           <div className="flex items-center justify-between">
@@ -158,7 +158,7 @@ export function Navigation() {
             <button
               type="button"
               onClick={closeMobileMenu}
-              className="w-9 h-9 rounded-full border border-black/20 bg-white flex items-center justify-center text-[#0D0D0D]"
+              className="w-9 h-9 rounded-full border border-black/20 bg-white flex items-center justify-center text-primary"
               aria-label="Close navigation menu"
             >
               <X className="w-4 h-4" />
@@ -172,10 +172,9 @@ export function Navigation() {
                 key={item.id}
                 href={item.href}
                 onClick={closeMobileMenu}
-                className="flex items-baseline justify-between py-2 border-b border-black/5 text-[#0D0D0D] hover:text-[#77756F] transition-colors"
+                className="flex items-baseline justify-between py-2 border-b border-black/5 text-primary hover:text-muted transition-colors"
               >
                 <span className="text-2xl font-semibold tracking-tight">{item.label}</span>
-                <span className="font-mono text-xs text-[#77756F]">[{item.number}]</span>
               </a>
             ))}
           </div>
@@ -186,12 +185,12 @@ export function Navigation() {
               href={PROFILE.resumePdfUrl}
               download="Thasika_Ragupathy_CV.pdf"
               onClick={closeMobileMenu}
-              className="flex items-center justify-center gap-2 py-3 rounded-full bg-[#0D0D0D] text-[#F4F2EE] text-sm font-medium"
+              className="flex items-center justify-center gap-2 py-3 rounded-full bg-primary text-warm-bg text-sm font-medium"
             >
-              <span>Download Résumé (PDF)</span>
+              <span>Download Resume (PDF)</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
-            <div className="flex items-center justify-between text-xs text-[#77756F] pt-1">
+            <div className="flex items-center justify-between text-xs text-muted pt-1">
               <span>{PROFILE.university}</span>
               <span>{PROFILE.location}</span>
             </div>

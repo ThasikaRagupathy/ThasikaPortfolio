@@ -15,7 +15,6 @@ export function Certifications() {
     >
       <Reveal>
         <SectionHeading
-          eyebrow="Credentials & Learning"
           title="Certifications"
           subtitle="Accredited certifications spanning user experience design, API architectures, artificial intelligence, and web technologies."
         />
@@ -56,13 +55,6 @@ export function Certifications() {
                 </div>
               </div>
 
-              {/* Right Side: Verified Completion Badge */}
-              <div className="shrink-0 self-end md:self-center">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-warm-bg group-hover:bg-soft border border-black/6 text-xs font-mono text-primary transition-colors">
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Credential Verified</span>
-                </div>
-              </div>
             </div>
           </Reveal>
         ))}

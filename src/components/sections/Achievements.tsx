@@ -24,7 +24,6 @@ export function Achievements() {
       <div className=" flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
         <Reveal>
           <SectionHeading
-            eyebrow="Milestones & Recognition"
             title="Achievements"
             subtitle="Verified participations, innovation challenge triumphs, and community service honors."
             className="mb-0"

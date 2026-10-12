@@ -35,7 +35,7 @@ export function Contact() {
     <footer
       id="contact"
       aria-label="Contact and Footer"
-      className="bg-[#0D0D0D] text-[#F4F2EE] pt-24 sm:pt-32 pb-12 px-4 sm:px-6 relative overflow-hidden"
+      className="bg-primary text-warm-bg pt-24 sm:pt-32 pb-12 px-4 sm:px-6 relative overflow-hidden"
     >
       {/* Subtle Geometric Decorative Watermark in background */}
       <div
@@ -53,7 +53,7 @@ export function Contact() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white/70 text-xs font-mono tracking-widest uppercase mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span>[07] Available for Collaborations & Roles</span>
+              <span>Available for Collaborations & Roles</span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-[1.12]">
@@ -93,7 +93,7 @@ export function Contact() {
                 <button
                   type="button"
                   onClick={copyEmailToClipboard}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-[#0D0D0D] text-xs font-mono font-medium hover:bg-white/90 transition-all cursor-pointer active:scale-95"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-primary text-xs font-mono font-medium hover:bg-white/90 transition-all cursor-pointer active:scale-95"
                   aria-live="polite"
                 >
                   {copied ? (

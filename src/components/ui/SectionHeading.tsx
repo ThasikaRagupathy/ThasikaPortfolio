@@ -1,7 +1,6 @@
 import React from "react";
 
 interface SectionHeadingProps {
-  eyebrow: string;
   title: string;
   italicWord?: string;
   subtitle?: string;
@@ -10,7 +9,6 @@ interface SectionHeadingProps {
 }
 
 export function SectionHeading({
-  eyebrow,
   title,
   italicWord,
   subtitle,
@@ -22,7 +20,6 @@ export function SectionHeading({
       {/* Eyebrow & Index */}
       <div className={`flex items-center gap-2 mb-3 text-xs tracking-wider uppercase font-mono text-muted ${centered ? "justify-center" : ""}`}>
         <span className="w-1.5 h-1.5 rounded-full bg-black/20" />
-        <span>{eyebrow}</span>
       </div>
 
       {/* Main Heading */}

@@ -26,7 +26,7 @@ export function TimelineItem({
   return (
     <div className="relative pl-8 sm:pl-10 pb-10 sm:pb-12 group last:pb-0">
       {/* Small Numbered Marker on the timeline spine */}
-      <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-white border border-black/25 flex items-center justify-center font-mono text-[10px] font-bold text-[#0D0D0D] group-hover:border-[#0D0D0D] group-hover:bg-[#0D0D0D] group-hover:text-white transition-all shadow-2xs -translate-x-[11px]">
+      <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-white border border-black/25 flex items-center justify-center font-mono text-[10px] font-bold text-primary group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all shadow-2xs -translate-x-2.75">
         {index}
       </div>
 
@@ -39,21 +39,21 @@ export function TimelineItem({
           >
             {category}
           </span>
-          <span className="font-mono text-xs font-semibold text-[#77756F]">
+          <span className="font-mono text-xs font-semibold text-muted">
             {period}
           </span>
         </div>
 
         {/* Role & Organization */}
-        <h3 className="text-base sm:text-lg font-bold text-[#0D0D0D] tracking-tight">
+        <h3 className="text-base sm:text-lg font-bold text-primary tracking-tight">
           {titleOrRole}
         </h3>
-        <p className="text-xs sm:text-sm font-medium text-[#77756F] mt-0.5">
+        <p className="text-xs sm:text-sm font-medium text-muted mt-0.5">
           {organizationOrInst}
         </p>
 
         {/* Responsibilities */}
-        <p className="mt-3 text-xs sm:text-sm text-[#3A3A3A] leading-relaxed font-normal">
+        <p className="mt-3 text-xs sm:text-sm text-secondary leading-relaxed font-normal">
           {description}
         </p>
       </div>

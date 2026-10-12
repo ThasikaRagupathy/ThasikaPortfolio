@@ -76,10 +76,7 @@ export function Experience() {
     >
       <Reveal>
         <SectionHeading
-          number="05"
-          eyebrow="Journey & Service"
-          title="Experience, leadership &"
-          italicWord="activities."
+          title="Experience, leadership & activities"
           subtitle="A clear chronological record of university leadership, student representation, conference volunteering, and foundational education."
         />
       </Reveal>
@@ -101,8 +98,8 @@ export function Experience() {
                   onClick={() => setActiveTab(tab)}
                   className={`px-4 py-2 rounded-full text-xs font-mono transition-all shrink-0 cursor-pointer ${
                     activeTab === tab
-                      ? "bg-[#0D0D0D] text-white shadow-xs font-semibold"
-                      : "bg-white/80 hover:bg-white text-[#77756F] hover:text-[#0D0D0D] border border-black/8"
+                      ? "bg-primary text-white shadow-xs font-semibold"
+                      : "bg-white/80 hover:bg-white text-muted hover:text-primary border border-black/8"
                   }`}
                 >
                   {tab === "All" ? "Complete Timeline" : tab} ({count})
@@ -131,7 +128,7 @@ export function Experience() {
 
       {/* What's Next Invitation Banner */}
       <Reveal delayMs={150} className="mt-14">
-        <div className="bg-[#0D0D0D] text-[#F4F2EE] p-8 sm:p-10 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="bg-primary text-warm-bg p-8 sm:p-10 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-xl">
             <div className="flex items-center gap-2 text-xs font-mono text-white/60 uppercase tracking-widest">
               <Sparkles className="w-3.5 h-3.5 text-white/80" />
@@ -147,7 +144,7 @@ export function Experience() {
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#0D0D0D] text-xs font-mono font-semibold hover:bg-white/90 transition-all shrink-0 active:scale-95"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-primary text-xs font-mono font-semibold hover:bg-white/90 transition-all shrink-0 active:scale-95"
           >
             <span>Let's Connect</span>
             <ArrowRight className="w-3.5 h-3.5" />

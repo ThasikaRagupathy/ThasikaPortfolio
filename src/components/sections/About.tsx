@@ -28,10 +28,8 @@ export function About() {
     >
       <Reveal>
         <SectionHeading
-          eyebrow="Profile & Background"
-          title="A little about"
-          italicWord="me."
-          subtitle="Information Technology undergraduate, full-stack developer, and multidisciplinary technology enthusiast."
+          title="A little about me."
+          subtitle="Information Technology undergraduate,UI/UX Designer, full-stack developer, and multidisciplinary technology enthusiast."
         />
       </Reveal>
 

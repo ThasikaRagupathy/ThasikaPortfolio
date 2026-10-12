@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { ACHIEVEMENTS } from "@/lib/data";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { Trophy, ChevronLeft, ChevronRight, Award } from "lucide-react";
+import { ChevronLeft, ChevronRight, Award } from "lucide-react";
 
 export function Achievements() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -21,7 +21,7 @@ export function Achievements() {
       aria-label="Milestones and Achievements"
       className="py-24 sm:py-32 px-4 sm:px-6 max-w-7xl mx-auto border-t border-black/5"
     >
-      <div className=" flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
         <Reveal>
           <SectionHeading
             title="Achievements"
@@ -59,10 +59,10 @@ export function Achievements() {
         {ACHIEVEMENTS.map((item, index) => (
           <div
             key={item.number}
-            className="w-full lg:w-95 lg:shrink-0 lg:snap-start"
+            className="flex h-120 w-full lg:w-95 lg:shrink-0 lg:snap-start"
           >
-            <Reveal delayMs={index * 100}>
-              <div className="h-full bg-white/80 hover:bg-white p-7 sm:p-8 rounded-2xl border border-black/8 hover:border-black/20 transition-all duration-300 shadow-2xs hover:shadow-md flex flex-col justify-between">
+            <Reveal delayMs={index * 100} className="h-full w-full">
+              <div className="flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl border border-black/8 bg-white/80 p-7 shadow-2xs transition-all duration-300 hover:border-black/20 hover:bg-white hover:shadow-md sm:p-8">
                 <div>
                   {/* Top Bar with Number & Year */}
                   <div className="flex items-center justify-between pb-4 border-b border-black/8">
@@ -76,21 +76,21 @@ export function Achievements() {
 
                   {/* Context Badge */}
                   <div className="mt-5 mb-2">
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-muted block">
+                    <span className="line-clamp-2 min-h-8 text-[11px] font-mono uppercase tracking-wider text-muted">
                       {item.roleOrContext}
                     </span>
-                    <h3 className="text-lg sm:text-xl font-bold text-primary tracking-tight mt-1 leading-snug">
+                    <h3 className="mt-1 line-clamp-2 min-h-14 text-lg font-bold leading-snug tracking-tight text-primary sm:text-xl">
                       {item.title}
                     </h3>
                   </div>
 
                   {/* Issuer */}
-                  <p className="text-xs font-medium text-muted">
+                  <p className="line-clamp-2 min-h-8 text-xs font-medium text-muted">
                     {item.issuer}
                   </p>
 
                   {/* Description */}
-                  <p className="mt-4 text-xs sm:text-sm text-secondary leading-relaxed font-normal">
+                  <p className="mt-4 line-clamp-5 min-h-26 text-xs font-normal leading-relaxed text-secondary sm:text-sm">
                     {item.description}
                   </p>
                 </div>

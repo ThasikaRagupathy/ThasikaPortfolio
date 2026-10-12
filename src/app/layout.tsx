@@ -1,6 +1,7 @@
+
 import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
 import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
-// @ts-expect-error Next.js processes global CSS imports.
 import "./globals.css";
 import { SmoothScrollProvider } from "@/lib/scroll";
 
@@ -49,7 +50,12 @@ export const metadata: Metadata = {
     "TypeScript",
     "Portfolio",
   ],
-  authors: [{ name: "Thasika Ragupathy", url: "https://github.com/ThasikaRagupathy" }],
+  authors: [
+    {
+      name: "Thasika Ragupathy",
+      url: "https://github.com/ThasikaRagupathy",
+    },
+  ],
   creator: "Thasika Ragupathy",
   openGraph: {
     type: "website",
@@ -75,7 +81,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html
@@ -91,9 +97,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-warm-bg text-primary antialiased selection:bg-primary selection:text-warm-bg min-h-screen">
-        <SmoothScrollProvider>
-          {children}
-        </SmoothScrollProvider>
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );

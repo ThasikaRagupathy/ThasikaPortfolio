@@ -34,7 +34,7 @@ export function Button({
   ariaLabel,
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-medium transition-all duration-200 cursor-pointer select-none rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0D0D0D] disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]";
+    "inline-flex items-center justify-center font-medium transition-all duration-200 cursor-pointer select-none rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]";
 
   const sizeStyles = {
     sm: "text-xs px-3.5 py-1.5 gap-1.5 tracking-wide",
@@ -44,13 +44,13 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-[#0D0D0D] text-[#F4F2EE] hover:bg-[#262626] border border-[#0D0D0D] shadow-sm",
+      "bg-primary text-warm-bg hover:opacity-90 border border-primary shadow-sm",
     secondary:
-      "bg-[#E9E6E0] text-[#0D0D0D] hover:bg-[#dedad3] border border-black/10",
+      "bg-soft text-primary hover:bg-primary/10 border border-black/10",
     outline:
-      "bg-transparent text-[#0D0D0D] hover:bg-[#0D0D0D]/5 border border-black/20 hover:border-black/40",
+      "bg-transparent text-primary hover:bg-primary/5 border border-black/20 hover:border-black/40",
     ghost:
-      "bg-transparent text-[#3A3A3A] hover:text-[#0D0D0D] hover:bg-black/5 border border-transparent",
+      "bg-transparent text-secondary hover:text-primary hover:bg-primary/5 border border-transparent",
   };
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;

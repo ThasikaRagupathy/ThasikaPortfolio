@@ -98,7 +98,7 @@ export function Experience() {
                   onClick={() => setActiveTab(tab)}
                   className={`px-4 py-2 rounded-full text-xs font-mono transition-all shrink-0 cursor-pointer ${
                     activeTab === tab
-                      ? "bg-primary text-white shadow-xs font-semibold"
+                      ? "bg-primary text-warm-bg shadow-xs font-semibold"
                       : "bg-white/80 hover:bg-white text-muted hover:text-primary border border-black/8"
                   }`}
                 >
@@ -130,14 +130,14 @@ export function Experience() {
       <Reveal delayMs={150} className="mt-14">
         <div className="bg-primary text-warm-bg p-8 sm:p-10 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="space-y-2 max-w-xl">
-            <div className="flex items-center gap-2 text-xs font-mono text-white/60 uppercase tracking-widest">
-              <Sparkles className="w-3.5 h-3.5 text-white/80" />
+            <div className="flex items-center gap-2 text-xs font-mono text-warm-bg/60 uppercase tracking-widest">
+              <Sparkles className="w-3.5 h-3.5 text-warm-bg/80" />
               <span>Looking Forward</span>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
+            <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-warm-bg">
               What's next?
             </h3>
-            <p className="text-sm text-white/70 leading-relaxed font-normal">
+            <p className="text-sm text-warm-bg/70 leading-relaxed font-normal">
               Seeking undergraduate internships, junior software development positions, and collaborative tech initiatives where I can contribute full-stack engineering, UX design, and diligent problem-solving.
             </p>
           </div>

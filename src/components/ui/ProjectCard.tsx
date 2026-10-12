@@ -268,7 +268,7 @@ export default function ProjectCard<T extends object>({
             />
           ) : (
             <>
-              <div className="relative h-full overflow-hidden bg-warm-bg p-2 sm:p-3">
+              <div className="project-illustration relative h-full overflow-hidden bg-warm-bg p-2 sm:p-3">
                 <ProjectIllustration concept={uiConcept} />
               </div>
             <div className="hidden relative h-full items-center justify-center overflow-hidden bg-linear-to-br from-white/70 via-white/40 to-violet-100/50 p-4 sm:p-8">

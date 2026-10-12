@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { NAV, PROFILE } from "@/lib/data";
 import { useActiveSection, useScrollProgress } from "@/lib/hooks";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -113,6 +114,7 @@ export function Navigation() {
 
             {/* Right Action / Mobile Menu Trigger */}
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <a
                 href={PROFILE.resumePdfUrl}
                 download="Thasika_Ragupathy_CV.pdf"
@@ -155,14 +157,17 @@ export function Navigation() {
               </div>
               <span className="text-sm font-semibold">{PROFILE.name}</span>
             </div>
-            <button
-              type="button"
-              onClick={closeMobileMenu}
-              className="w-9 h-9 rounded-full border border-black/20 bg-white flex items-center justify-center text-primary"
-              aria-label="Close navigation menu"
-            >
-              <X className="w-4 h-4" />
-            </button>
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <button
+                type="button"
+                onClick={closeMobileMenu}
+                className="w-9 h-9 rounded-full border border-black/20 bg-white flex items-center justify-center text-primary"
+                aria-label="Close navigation menu"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           {/* Navigation Links List */}

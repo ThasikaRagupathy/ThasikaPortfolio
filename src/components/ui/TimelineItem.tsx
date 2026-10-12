@@ -18,15 +18,15 @@ export function TimelineItem({
   description,
 }: TimelineItemProps) {
   const categoryStyles = {
-    Leadership: "bg-[#0D0D0D] text-white",
-    Volunteering: "bg-[#E9E6E0] text-[#0D0D0D]",
-    Education: "bg-white text-[#0D0D0D] border border-black/10",
+    Leadership: "bg-primary text-warm-bg",
+    Volunteering: "bg-soft text-primary",
+    Education: "bg-white text-primary border border-black/10",
   };
 
   return (
     <div className="relative pl-8 sm:pl-10 pb-10 sm:pb-12 group last:pb-0">
       {/* Small Numbered Marker on the timeline spine */}
-      <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-white border border-black/25 flex items-center justify-center font-mono text-[10px] font-bold text-primary group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all shadow-2xs -translate-x-2.75">
+      <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-white border border-black/25 flex items-center justify-center font-mono text-[10px] font-bold text-primary group-hover:border-primary group-hover:bg-primary group-hover:text-warm-bg transition-all shadow-2xs -translate-x-2.75">
         {index}
       </div>
 

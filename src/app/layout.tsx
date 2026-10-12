@@ -81,7 +81,15 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${interTight.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(()=>{try{const saved=localStorage.getItem('portfolio-theme');const dark=saved?saved==='dark':matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('dark',dark);document.documentElement.style.colorScheme=dark?'dark':'light'}catch{}})()`,
+          }}
+        />
+      </head>
       <body className="bg-warm-bg text-primary antialiased selection:bg-primary selection:text-warm-bg min-h-screen">
         <SmoothScrollProvider>
           {children}

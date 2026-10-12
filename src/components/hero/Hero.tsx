@@ -99,27 +99,22 @@ export function Hero() {
       ref={heroSectionRef}
       id="hero"
       aria-label="Introduction and Video Centrepiece"
-      className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-center items-center pt-24 pb-16 px-4 sm:px-6 overflow-hidden bg-warm-bg"
+      className="relative min-h-[92vh] sm:min-h-screen grid place-items-center pt-24 pb-16 px-4 sm:px-6 overflow-hidden bg-warm-bg"
     >
       {/* Background Large Outlined THASIKA Typography */}
       <div
         className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-0"
         aria-hidden="true"
       >
-        <span className="text-[17vw] lg:text-[20vw] font-black uppercase tracking-tighter text-outline-subtle opacity-70 translate-y-[-5%] sm:translate-y-[-2%]">
+        <span className="text-[18vw] font-black uppercase tracking-tighter text-outline-subtle opacity-90 translate-y-[2%] sm:text-[21vw] lg:text-[23vw]">
           THASIKA
         </span>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center text-center">
-        {/* Eyebrow Label */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-black/10 text-[11px] sm:text-xs font-mono tracking-widest uppercase text-secondary mb-6 shadow-2xs">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          <span>{PROFILE.eyebrow}</span>
-        </div>
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 sm:gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
 
         {/* Video Centrepiece Container */}
-        <div className="relative my-2 sm:my-4 w-full max-w-85 sm:max-w-100 md:max-w-110 group">
+        <div className="group relative my-2 w-full max-w-85 sm:my-4 sm:max-w-100 md:max-w-none">
           {/* Subtle Outer Card Border & Backdrop */}
           <div className="relative aspect-4/5 sm:aspect-3/4 w-full rounded-2xl overflow-hidden bg-soft border border-black/15 shadow-xl transition-all duration-300">
             {isVideoAvailable ? (
@@ -206,27 +201,33 @@ export function Hero() {
           </div>
         </div>
 
+        <div className="text-center md:text-left">
+        {/* Eyebrow Label */}
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-3 py-1 text-[11px] font-mono uppercase tracking-widest text-secondary shadow-2xs sm:text-xs">
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
+          <span>{PROFILE.eyebrow}</span>
+        </div>
+
         {/* Main Heading */}
-<h1 className="mt-6 text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-primary max-w-3xl leading-[1.12] font-(family-name:--font-poppins)">
-  Building digital experiences with{" "}
-  <span className="font-medium text-primary/90">
-    code, creativity,
-  </span>{" "}
-  and curiosity.
-</h1>
+        <h1 className="mt-2 max-w-3xl text-3xl font-bold leading-[1.12] tracking-tight text-primary sm:text-4xl md:text-5xl lg:text-6xl font-(family-name:--font-poppins)">
+          Building digital experiences with{" "}
+          <span className="font-medium text-primary/90">code, creativity,</span>{" "}
+          and curiosity.
+        </h1>
 
         {/* Introduction Copy */}
-        <p className="mt-5 text-sm sm:text-base md:text-lg text-secondary max-w-2xl font-normal leading-relaxed">
+        <p className="mt-5 max-w-2xl text-sm font-normal leading-relaxed text-secondary sm:text-base md:text-lg">
           {PROFILE.heroIntro}
         </p>
 
         {/* Clear Action Buttons */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 md:justify-start lg:flex-nowrap">
           <Button
             href="#projects"
             variant="primary"
-            size="lg"
+            size="md"
             icon={<ArrowDown className="w-4 h-4" />}
+            className="whitespace-nowrap"
           >
             Explore My Work
           </Button>
@@ -234,7 +235,8 @@ export function Hero() {
           <Button
             href="#contact"
             variant="secondary"
-            size="lg"
+            size="md"
+            className="whitespace-nowrap"
           >
             Let's Connect
           </Button>
@@ -243,11 +245,13 @@ export function Hero() {
             href={PROFILE.resumePdfUrl}
             download="Thasika_Ragupathy_CV.pdf"
             variant="outline"
-            size="lg"
+            size="md"
             icon={<FileText className="w-4 h-4" />}
+            className="whitespace-nowrap"
           >
             Download Resume
           </Button>
+        </div>
         </div>
       </div>
     </section>

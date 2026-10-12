@@ -3,11 +3,17 @@
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
-export function ThemeToggle() {
+export function ThemeToggle({ size = "default" }: { size?: "default" | "large" }) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    setIsDark(document.documentElement.classList.contains("dark"));
+    const syncThemeState = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+
+    syncThemeState();
+    window.addEventListener("portfolio-theme-change", syncThemeState);
+    return () => window.removeEventListener("portfolio-theme-change", syncThemeState);
   }, []);
 
   const toggleTheme = () => {
@@ -19,6 +25,7 @@ export function ThemeToggle() {
     } catch {
       // Keep the control usable when storage is disabled.
     }
+    window.dispatchEvent(new Event("portfolio-theme-change"));
     setIsDark(nextIsDark);
   };
 
@@ -28,9 +35,9 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
       title={`Switch to ${isDark ? "light" : "dark"} theme`}
-      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-black/15 bg-white/80 text-primary transition-colors hover:bg-white focus-visible:outline-primary"
+      className={`flex shrink-0 items-center justify-center rounded-full border border-border-subtle bg-surface text-primary transition-colors hover:bg-soft focus-visible:outline-primary ${size === "large" ? "h-11 w-11" : "h-9 w-9"}`}
     >
-      {isDark ? <Sun aria-hidden="true" className="h-4 w-4" /> : <Moon aria-hidden="true" className="h-4 w-4" />}
+      {isDark ? <Sun aria-hidden="true" className={size === "large" ? "h-5 w-5" : "h-4 w-4"} /> : <Moon aria-hidden="true" className={size === "large" ? "h-5 w-5" : "h-4 w-4"} />}
     </button>
   );
 }

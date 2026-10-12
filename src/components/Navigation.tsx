@@ -128,7 +128,7 @@ export function Navigation() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden w-9 h-9 rounded-full border border-black/15 bg-white/80 flex items-center justify-center text-primary hover:bg-white transition-colors focus-visible:outline-primary"
+                className="md:hidden w-9 h-9 rounded-full border border-border-subtle bg-surface flex items-center justify-center text-primary hover:bg-soft transition-colors focus-visible:outline-primary"
                 aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-navigation"
@@ -147,50 +147,51 @@ export function Navigation() {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation"
-          className="fixed inset-0 z-50 bg-warm-bg flex flex-col justify-between p-6 md:hidden animate-in fade-in duration-200"
+          className="fixed inset-0 z-60 flex min-h-dvh flex-col justify-between p-6 sm:p-7 md:hidden animate-in fade-in duration-200"
+          style={{ backgroundColor: "var(--surface-white)" }}
         >
           {/* Top Bar inside overlay */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full border border-black/30 flex items-center justify-center bg-white">
+              <div className="w-10 h-10 rounded-full border border-border-subtle flex items-center justify-center bg-surface">
                 <span className="font-mono text-xs font-semibold">{PROFILE.initials}</span>
               </div>
               <span className="text-sm font-semibold">{PROFILE.name}</span>
             </div>
             <div className="flex items-center gap-2">
-              <ThemeToggle />
+              <ThemeToggle size="large" />
               <button
                 type="button"
                 onClick={closeMobileMenu}
-                className="w-9 h-9 rounded-full border border-black/20 bg-white flex items-center justify-center text-primary"
+                className="w-11 h-11 rounded-full border border-border-subtle bg-surface flex items-center justify-center text-primary transition-colors hover:bg-soft focus-visible:outline-primary"
                 aria-label="Close navigation menu"
               >
-                <X className="w-4 h-4" />
+                <X className="w-5 h-5" />
               </button>
             </div>
           </div>
 
           {/* Navigation Links List */}
-          <div className="flex flex-col gap-3 my-auto py-8">
+          <div className="my-auto flex flex-col gap-2 py-8 sm:gap-3">
             {NAV.map((item) => (
               <a
                 key={item.id}
                 href={item.href}
                 onClick={closeMobileMenu}
-                className="flex items-baseline justify-between py-2 border-b border-black/5 text-primary hover:text-muted transition-colors"
+                className="flex items-baseline justify-between border-b border-border-subtle py-2.5 text-primary transition-colors hover:text-muted sm:py-3"
               >
-                <span className="text-2xl font-semibold tracking-tight">{item.label}</span>
+                <span className="text-[1.75rem] font-semibold tracking-tight sm:text-3xl">{item.label}</span>
               </a>
             ))}
           </div>
 
           {/* Footer Actions */}
-          <div className="pt-6 border-t border-black/10 flex flex-col gap-3">
+          <div className="flex flex-col gap-3 border-t border-border-subtle pt-6">
             <a
               href={PROFILE.resumePdfUrl}
               download="Thasika_Ragupathy_CV.pdf"
               onClick={closeMobileMenu}
-              className="flex items-center justify-center gap-2 py-3 rounded-full bg-primary text-warm-bg text-sm font-medium"
+              className="flex items-center justify-center gap-2 py-3 text-sm font-semibold text-primary transition-opacity hover:opacity-70"
             >
               <span>Download Resume (PDF)</span>
               <ArrowUpRight className="w-4 h-4" />

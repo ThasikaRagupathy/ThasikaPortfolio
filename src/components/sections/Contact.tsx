@@ -58,9 +58,7 @@ export function Contact() {
 
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-warm-bg leading-[1.12]">
               Let's build something{" "}
-              <span className="font-serif italic font-normal text-warm-bg/90">
                 meaningful
-              </span>{" "}
               together.
             </h2>
 

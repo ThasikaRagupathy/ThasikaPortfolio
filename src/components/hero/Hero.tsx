@@ -103,15 +103,15 @@ export function Hero() {
     >
       {/* Background Large Outlined THASIKA Typography */}
       <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-0"
+        className="pointer-events-none absolute right-2 top-1/2 z-20 hidden -translate-y-1/2 select-none md:flex"
         aria-hidden="true"
       >
-        <span className="text-[18vw] font-black uppercase tracking-tighter text-outline-subtle opacity-90 translate-y-[2%] sm:text-[21vw] lg:text-[23vw]">
+        <span className="rotate-360 text-[clamp(1rem,3vw,3rem)] font-black uppercase tracking-tight text-outline-subtle opacity-70 [writing-mode:vertical-rl]">
           THASIKA
         </span>
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 sm:gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 sm:gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:pr-12 lg:gap-16">
 
         {/* Video Centrepiece Container */}
         <div className="group relative my-2 w-full max-w-85 sm:my-4 sm:max-w-100 md:max-w-none">
